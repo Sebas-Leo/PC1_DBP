@@ -4,7 +4,7 @@ import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
 
-public class ProductoDTO {
+public class ProductoRequest {
 
     // @DecimalMin / @DecimalMax: Valida el valor mínimo y máximo para tipos numéricos (incluido BigDecimal).
     @NotNull(message = "El precio es obligatorio")
@@ -16,10 +16,4 @@ public class ProductoDTO {
     @Min(value = 1, message = "El stock mínimo es 1")
     @Max(value = 1000, message = "El stock máximo es 1000")
     private int stock;
-
-    // 4. Validación de fechas
-
-    // @Past / @Future: Valida que un campo de fecha sea en el pasado o en el futuro.
-    @Past(message = "La fecha de fabricación debe ser una fecha pasada")
-    private java.time.LocalDate fechaFabricacion;
 }
